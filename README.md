@@ -13,7 +13,7 @@ Description
 
 This plugin is strongly based on the code `WPMS Global Content` from `Neerav Dobaria`.
 I really liked that plugin, but i thought it could do more, so i added some 
-things that i also can insert adsense accross a Wordpress 3.3 network installation.
+things that it also can insert adsense accross a Wordpress 3.3 network installation.
 
 
 License
