@@ -95,8 +95,8 @@ Upgrade Notice
 More informations
 ------------
 
-[Wiki]: https://github.com/rubenstorm/storm-shortcodes/wiki
 [Blog]: http://projects.ruben-storm.eu/wpms-network-global-inserts/
 [GNU General Public License]: http://www.gnu.org/licenses/gpl.html
+
 
 
