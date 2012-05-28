@@ -7,6 +7,7 @@ WPMS Network Global Inserts is a Wordpress plugin
 
 WPMS Network Global Inserts allow wordpress multisite network admin to insert html in the content accross the network
 
+
 Description
 --------------
 
