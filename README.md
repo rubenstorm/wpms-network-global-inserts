@@ -39,6 +39,8 @@ Network Administration.
 The field you dont want to print, just let them empty. The blog id you want 
 to exclude is `0` if you want to print it out on all.
 
+More information on INSTALL file
+
 
 
 
@@ -82,18 +84,7 @@ None yet
 Changelog
 --------------
 
-### 0.0.1
-
-* First release.
-
-
-
-Upgrade Notice
---------------
-
-### 0.0.1
-
-* First release.
+See CHANGELOG file
 
 
 

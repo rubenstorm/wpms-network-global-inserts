@@ -1,3 +1,41 @@
+<?php
+
+/**
+ *
+ * WPMS Network Global Inserts
+ * 
+ * <p>Copyright (c) 2012 Ruben Storm</p>
+ * 
+ * <p>This Code is Based on WPMS Global Content from Neerav Dobaria</p>
+ * 
+ * <p>This program is free software; you can redistribute it and/or modify<br />
+ * it under the terms of the GNU General Public License, version 2, as<br />
+ * published by the Free Software Foundation.</p>
+ *
+ * <p>This program is distributed in the hope that it will be useful,<br />
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of<br />
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br />
+ * GNU General Public License for more details.</p>
+ *
+ * <p>You should have received a copy of the GNU General Public License<br />
+ * along with this program; if not, write to the Free Software</p>
+ * <p>Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</p>
+ * 
+ * @package WPMSNGI
+ * @name wpmsngi-options
+ * @author Neerav Dobaria
+ * @author Ruben Storm <storm.ruben@gmail.com>
+ * @version 0.0.2
+ * @since WPMS Global Content
+ * @link http://apidocs.ruben-storm.eu/wpms-network-global-inserts/ Project Documentation
+ * @link http://projects.ruben-storm.eu/wpms-network-global-inserts/ Project Page
+ * @license GNU General Public License 3.0 (GPL) http://www.gnu.org/licenses/gpl.html
+ * @copyright Copyright (c) 2012 Ruben Storm, <storm.ruben@gmail.com>
+ * 
+ */
+
+?>
+
 <div id="wpmsngi-options" class="wpmsngi-option wrap">
     <div id="icon-options-general" class="icon32"><br></div>
     <h2><?php echo WPMSNGI_NAME ?> Options</h2>

@@ -4,7 +4,7 @@ Donate link: http://projects.ruben-storm.eu/wpms-network-global-inserts/
 Tags: multisite, ms, global insert, wpms, adsense, google, html
 Requires at least: 3.3.
 Tested up to: 3.3.2
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -80,11 +80,19 @@ Contact me, and i will take it in here
 
 == Changelog ==
 
+= 0.0.2 =
+* Better Documentation
+* Code cleanup
+* Added CHANGELOG file in GITHUB
+
 = 0.0.1 =
 * First release.
 
 
 == Upgrade Notice ==
+
+= 0.0.2 =
+* just made a code cleanup and better Documentation
 
 = 0.0.1 =
 * First release.
@@ -96,11 +104,8 @@ See description
 
 == A brief Markdown Example ==
 
-
 Here's a link to [My Wordpressblog](http://ruben-storm.eu/ "My Blog"), you will see it in action there.
 
 
 
-
-`<?php code(); // goes in backticks ?>`
 
