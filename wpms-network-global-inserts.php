@@ -1,4 +1,13 @@
 <?php
+/**
+Plugin Name: WPMS Network Global Inserts
+Plugin URI: http://projects.ruben-storm.eu/wpms-network-global-inserts/
+Description: WPMS Network Global Inserts allow wordpress multisite network admin to insert html in the content accross the network
+Version: 0.0.1
+Author: Ruben Storm
+Author URI: http://ruben-storm.eu
+License: GPLv3
+ */
 
 /**
  *
