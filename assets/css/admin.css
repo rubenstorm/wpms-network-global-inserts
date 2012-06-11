@@ -1,0 +1,28 @@
+#wpmsngi-options form{
+    width:794px;
+    background: #ECECEC;
+    padding: 8px 8px 0 8px;
+    margin-top: 10px;
+}
+#wpmsngi-options form > table{
+    width:794px;
+    background: #FFF;
+    margin: 0;
+}
+#wpmsngi-options form table td.label{
+    width: 110px;
+}
+#wpmsngi-options form table td{
+    border-bottom: 1px solid #DFDFDF;
+}
+#wpmsngi-options form input[type=text]{
+    width: 250px;
+}
+#wpmsngi-options form textarea{
+    width: 550px;
+    height: 200px;
+}
+
+#wpmsngi-options span.notice{
+    color:#F00;
+}

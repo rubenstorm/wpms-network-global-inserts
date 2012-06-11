@@ -1,0 +1,31 @@
+WPMS Network Global Inserts
+===============
+
+Visit https://github.com/rubenstorm/wpms-network-global-inserts for full changelogs and git access.
+
+Visit http://apidocs.ruben-storm.eu/wpms-network-global-inserts/ for Documentation.
+
+Visit http://projects.ruben-storm.eu/wpms-network-global-inserts/ for the Project page.
+
+Follow http://twitter.com/rubenstorm 
+
+Maintainers:
+------------
+* Ruben Storm
+
+
+Translators:
+------------
+* None yet
+
+
+CHANGELOG
+---------
+
+### 0.0.2
+* Better Documentation
+* Code cleanup
+* Added this CHANGELOG file
+
+### 0.0.1
+* first release
