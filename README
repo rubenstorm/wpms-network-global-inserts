@@ -88,7 +88,11 @@ More informations
 [Blog]: http://projects.ruben-storm.eu/wpms-network-global-inserts/
 [GNU General Public License]: http://www.gnu.org/licenses/gpl.html
 
+<<<<<<< HEAD
 WordPress Plugin Development
+=======
+WordPress Plugin Devlopment
+>>>>>>> 1e846e21497f68fdaff98423a4b4d893ea491cfc
 ------------
 This has to be on top of the first, main file
 
@@ -96,7 +100,11 @@ This has to be on top of the first, main file
 Plugin Name: WPMS Network Global Inserts
 Plugin URI: http://projects.ruben-storm.eu/wpms-network-global-inserts/
 Description: WPMS Network Global Inserts allow wordpress multisite network admin to insert html in the content accross the network
+<<<<<<< HEAD
 Version: 0.0.2
+=======
+Version: 0.0.1
+>>>>>>> 1e846e21497f68fdaff98423a4b4d893ea491cfc
 Author: Ruben Storm
 Author URI: http://ruben-storm.eu
 License: GPLv3

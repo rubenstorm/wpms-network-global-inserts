@@ -1,7 +1,11 @@
 === WPMS Network Global Inserts ===
 Contributors: rubenstorm
 Donate link: http://projects.ruben-storm.eu/wpms-network-global-inserts/
+<<<<<<< HEAD
 Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network, adds
+=======
+Tags: multisite, ms, global insert, wpms, adsense, google, html
+>>>>>>> 1e846e21497f68fdaff98423a4b4d893ea491cfc
 Requires at least: 3.3.
 Tested up to: 3.3.2
 Stable tag: 0.0.2
