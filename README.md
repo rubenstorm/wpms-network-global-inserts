@@ -46,7 +46,8 @@ More information on INSTALL file
 
 ### Features
 
-* `Header` -- Insert a header in all blogs
+* `Header` -- Insert a header in all pages
+* `Pages Footer` -- Insert a footer in all pages
 * `Footer` -- Insert a footer in all blogs
 * `Content Header` -- Insert html in the content header 
 * `Content Center` -- Insert html in the content center 
@@ -92,7 +93,7 @@ More informations
 ------------
 
 [Wiki]: https://github.com/rubenstorm/storm-shortcodes/wiki
-[Blog]: http://projects.ruben-storm.eu/wpms-network-global-inserts/
+[Blog]: http://ruben-storm.de/blog
 [GNU General Public License]: http://www.gnu.org/licenses/gpl.html
 
 

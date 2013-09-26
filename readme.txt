@@ -1,14 +1,12 @@
 === WPMS Network Global Inserts ===
 Contributors: rubenstorm
 Donate link: http://projects.ruben-storm.eu/wpms-network-global-inserts/
-<<<<<<< HEAD
 Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network, adds
 =======
 Tags: multisite, ms, global insert, wpms, adsense, google, html
->>>>>>> 1e846e21497f68fdaff98423a4b4d893ea491cfc
 Requires at least: 3.3.
-Tested up to: 3.3.2
-Stable tag: 0.0.2
+Tested up to: 3.6.1
+Stable tag: 0.0.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -18,7 +16,7 @@ WPMS Network Global Inserts allow wordpress multisite network admin to insert ht
 
 This plugin is strongly based on the code `WPMS Global Content` from `Neerav Dobaria`.
 I really liked that plugin, but i thought it could do more, so i added some 
-things that i also can insert adsense accross a Wordpress 3.3 network installation.
+things that i also can insert adsense accross a Wordpress 3 network installation.
 
 
 
@@ -33,7 +31,8 @@ Now you are ready and it will print
 
 == Features ==
 
-* `Header` -- Insert a header in all blogs
+* `Header` -- Insert a header in all pages
+* `Pages Footer` -- Insert a footer in all pages
 * `Footer` -- Insert a footer in all blogs
 * `Content Header` -- Insert html in the content header 
 * `Content Center` -- Insert html in the content center 
@@ -68,7 +67,7 @@ Network Administration.
 The field you dont want to print, just let them empty. The blog id you want 
 to exclude is `0` if you want to print it out on all.
 
-[Blog]: http://projects.ruben-storm.eu/wpms-network-global-inserts/
+[Blog]: http://ruben-storm.de/blog
 
 
 == Frequently Asked Questions ==
@@ -84,6 +83,10 @@ Contact me, and i will take it in here
 
 == Changelog ==
 
+= 0.0.3 =
+* Issus Fixed 
+* Pages Fields added
+
 = 0.0.2 =
 * Better Documentation
 * Code cleanup
@@ -94,6 +97,12 @@ Contact me, and i will take it in here
 
 
 == Upgrade Notice ==
+
+= 0.0.3 =
+* Fixed 2 Issus, one with the header insert and the one with the .js file
+* Not inserting in header got fixed to pages header
+* Added the possibility to insert into pages on the content top and footer
+* Design cleanup
 
 = 0.0.2 =
 * just made a code cleanup and better Documentation
@@ -108,7 +117,7 @@ See description
 
 == A brief Markdown Example ==
 
-Here's a link to [My Wordpressblog](http://ruben-storm.eu/ "My Blog"), you will see it in action there.
+Here's a link to [My Wordpressblog](http://ruben-storm.de/blog "My Blog"), you will see it in action there.
 
 
 

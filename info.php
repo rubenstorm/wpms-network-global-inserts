@@ -35,6 +35,15 @@
  * 
  * <p><b>ChangeLog</b></p>
  * 
+ * <p><b>0.0.3</b></p>
+ * - Issus Fixed 
+ * <ul>
+ * <li>header content is being shown in footer</li>
+ * <li>Including a js file that does not exist</li>
+ * </ul>
+ * - Pages Fields added
+ * 
+ * 
  * <p><b>0.0.2</b></p>
  * - Better Documentation
  * - Code cleanup
@@ -56,7 +65,7 @@
  * @name WPMS Network Global Inserts
  * @version 0.0.2
  * @link http://apidocs.ruben-storm.eu/wpms-network-global-inserts/ Project Documentation
- * @link http://projects.ruben-storm.eu/wpms-network-global-inserts/ Project Page
+ * @link http://ruben-storm.de/projekte/wpms-network-global-inserts/ Project Page
  * @link http://codex.wordpress.org/Writing_a_Plugin Writing a Plugin
  * @license GNU General Public License 3.0 (GPL) http://www.gnu.org/licenses/gpl.html
  * @copyright Copyright (c) 2012 Ruben Storm, storm.ruben@gmail.com

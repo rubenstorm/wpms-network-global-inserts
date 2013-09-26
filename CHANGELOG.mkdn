@@ -5,11 +5,11 @@ Visit https://github.com/rubenstorm/wpms-network-global-inserts for full changel
 
 Visit http://apidocs.ruben-storm.eu/wpms-network-global-inserts/ for Documentation.
 
-<<<<<<< HEAD
-Visit http://projects.ruben-storm.eu/wpms-network-global-inserts/ for the Project page.
+
+Visit http://ruben-storm.de/projekte/wpms-network-global-inserts/ for the Project page.
 =======
-Visit http://projects.ruben-storm.eu/storm-shortcodes/ for the Project page.
->>>>>>> 1e846e21497f68fdaff98423a4b4d893ea491cfc
+
+
 
 Follow http://twitter.com/rubenstorm 
 
@@ -25,6 +25,13 @@ Translators:
 
 CHANGELOG
 ---------
+
+### 0.0.3
+* Issus Fixed 
+* Pages Fields added
+### Issus beeing fixed for Version 0.0.3
+* header content is being shown in footer
+* Including a js file that does not exist
 
 ### 0.0.2
 * Better Documentation

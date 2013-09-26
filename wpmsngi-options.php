@@ -25,10 +25,10 @@
  * @name wpmsngi-options
  * @author Neerav Dobaria
  * @author Ruben Storm <storm.ruben@gmail.com>
- * @version 0.0.2
+ * @version 0.0.3
  * @since WPMS Global Content
  * @link http://apidocs.ruben-storm.eu/wpms-network-global-inserts/ Project Documentation
- * @link http://projects.ruben-storm.eu/wpms-network-global-inserts/ Project Page
+ * @link http://ruben-storm.de/projekte/wpms-network-global-inserts/ Project Page
  * @license GNU General Public License 3.0 (GPL) http://www.gnu.org/licenses/gpl.html
  * @copyright Copyright (c) 2012 Ruben Storm, <storm.ruben@gmail.com>
  * 
@@ -45,7 +45,12 @@
         $wpmsngiopts = get_option('wpmsngi'); ?>
 
         <table class="form-table">
-
+        
+        	<tr valign="top">
+                <td scope="row" colspan="2"><H1>Settings for Network</H1></td>
+                
+            </tr>
+            
             <tr valign="top">
                 <td class="label" scope="row">Exclude/Include</td>
                 <td>
@@ -63,15 +68,35 @@
                     </small>
                 </td>
             </tr>
+            
+            <tr valign="top">
+                <td scope="row" colspan="2"><H1>Pages Content</H1></td>
+                
+            </tr>
 
             <tr valign="top">
-                <td scope="row">Header Content</td>
+                <td scope="row">Pages Header Content</td>
                 <td>
                     <textarea id="wpmsngitextheader" class="wpmsngitextarea"
                               name="wpmsngi[header]"><?php echo $wpmsngiopts['header']?></textarea>
                     <br/>
-                    <small>Enter content that will be displayed in header.</small>
+                    <small>Enter content that will be displayed in the pages header.</small>
                 </td>
+            </tr>
+            
+            <tr valign="top">
+                <td scope="row">Pages Footer Content</td>
+                <td>
+                    <textarea id="wpmsngitextpagesfooter" class="wpmsngitextarea"
+                              name="wpmsngi[pagesfooter]"><?php echo $wpmsngiopts['pagesfooter']?></textarea>
+                    <br/>
+                    <small>Enter content that will be displayed in the pages footer.</small>
+                </td>
+            </tr>
+            
+            <tr valign="top">
+                <td scope="row" colspan="2"><H1>Posts Content</H1></td>
+                
             </tr>
             
             <tr valign="top">
@@ -103,6 +128,12 @@
                     <small>Enter content that will be displayed in footer of the post.</small>
                 </td>
             </tr>
+            
+            <tr valign="top">
+                <td scope="row" colspan="2"><H1>Blog Footer Content</H1></td>
+                
+            </tr>
+            
 
             <tr valign="top">
                 <td scope="row">Footer Content</td>
@@ -110,7 +141,7 @@
                     <textarea id="wpmsngitextfooter" class="wpmsngitextarea"
                               name="wpmsngi[footer]"><?php echo $wpmsngiopts['footer']?></textarea>
                     <br/>
-                    <small>Enter content that will be displayed in footer.</small>
+                    <small>Enter content that will be displayed in the footer of all posts and pages.</small>
                 </td>
             </tr>
 
@@ -120,20 +151,27 @@
             <input type="submit" class="button-primary" name="wpmsngi[submit]" value="<?php _e('Save Changes') ?>"/>
         </p>
     </form>
-    <p>If you find this plugin useful, please donate to continue development. <em>Donation in USD or EUR</em></p>
-    
+    <h1>Donation / Spende</h1>
+    <p>If you find this plugin useful, please donate to continue development. <em>Donation USD (5,-) or EUR (5,-)</em></p>
+    <p>Visit the <a href="http://ruben-storm.de/projekte/wpms-network-global-inserts/" target="_blank">Project Page</a> on my 
+    <a href="http://ruben-storm.de/projekte/wpms-network-global-inserts/" target="_blank">Homepage</a>. You will find information 
+    on my <a href="http://ruben-storm.de/projekte/wpms-network-global-inserts/" target="_blank">Blog</a>.. (in german)</p>
+    <h3>Deutsch in EUR</h3>
+    <p>Spenden Sie EUR 5</p>
     <form name="_xclick" action="https://www.paypal.com/de/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="business" value="ruben.storm@gmx.de">
-        <input type="hidden" name="item_name" value="Spende für WPMS Network Global Inserts">
+        <input type="hidden" name="item_name" value="Spende WPMS Network Global Inserts">
         <input type="hidden" name="currency_code" value="EUR">
         <input type="hidden" name="amount" value="5,00">
         <input type="image" src="http://www.paypal.com/de_DE/i/btn/x-click-butcc-donate.gif" border="0" name="submit" alt="Zahlen Sie mit PayPal - schnell, kostenlos und sicher!">
     </form>
+    <h3>English in USD</h3>
+    <p>Donate USD 5</p>
     <form name="_xclick" action="https://www.paypal.com/de/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="business" value="ruben.storm@gmx.de">
-        <input type="hidden" name="item_name" value="Spende für WPMS Network Global Inserts">
+        <input type="hidden" name="item_name" value="Donate for WPMS Network Global Inserts">
         <input type="hidden" name="currency_code" value="USD">
         <input type="hidden" name="amount" value="5,00">
         <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" border="0" name="submit" alt="Zahlen Sie mit PayPal - schnell, kostenlos und sicher!">

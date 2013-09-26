@@ -1,11 +1,11 @@
 <?php
 /**
 Plugin Name: WPMS Network Global Inserts
-Plugin URI: http://projects.ruben-storm.eu/wpms-network-global-inserts/
+Plugin URI: http://ruben-storm.de/projekte/wpms-network-global-inserts/
 Description: WPMS Network Global Inserts allow wordpress multisite network admin to insert html in the content accross the network
-Version: 0.0.2
+Version: 0.0.3
 Author: Ruben Storm
-Author URI: http://ruben-storm.eu
+Author URI: http://ruben-storm.de
 License: GPLv3
  */
 
@@ -38,9 +38,9 @@ License: GPLv3
  * @name wpms-network-global-inserts
  * @author Neerav Dobaria
  * @author Ruben Storm <storm.ruben@gmail.com>
- * @version 0.0.2
+ * @version 0.0.3
  * @link http://apidocs.ruben-storm.eu/wpms-network-global-inserts/ Project Documentation
- * @link http://projects.ruben-storm.eu/wpms-network-global-inserts/ Project Page
+ * @link http://ruben-storm.de/projekte/wpms-network-global-inserts/ Project Page
  * @license GNU General Public License 3.0 (GPL) http://www.gnu.org/licenses/gpl.html
  * @copyright Copyright (c) 2012 Ruben Storm, storm.ruben@gmail.com
  * @todo making it multi lingual, all gettext and load_plugin_textdomain
@@ -133,7 +133,7 @@ define('WPMSNGI_URL', WP_PLUGIN_URL . '/wpms-network-global-inserts');
 define('WPMSNGI_BASENAME', plugin_basename(__FILE__));
 
 
-if (!class_exists(wpavp)) {
+if (!class_exists('wpmsngi')) {
     
     /**
      * The plugins main class
@@ -279,15 +279,21 @@ if (!class_exists(wpavp)) {
          * Loading scripts in assets
          * 
          * <p>Loading the .js scripts for the plugin</p>
+         * 
+         * <p>Removed, not needed anymore</p>
          *
          * @author Neerav Dobaria
-         * @version 0.0.1
+         * @author Ruben Storm
+         * @version 0.0.3
          * @since WPMS Global Content
          * @name load_script
+         * @deprecated No use anymore, but let it in, maybe some function still call it
+         * 
          */
         function load_script()
         {
-            wp_enqueue_script('wpmsngi_script', WPMSNGI_URL . '/assets/js/script.js', array('jquery'));
+        	// Not needed
+            // wp_enqueue_script('wpmsngi_script', WPMSNGI_URL . '/assets/js/script.js', array('jquery'));
         }
 
         /**
@@ -311,13 +317,13 @@ if (!class_exists(wpavp)) {
          * 
          * @author Neerav Dobaria
          * @author Ruben Storm
-         * @version 0.0.1
+         * @version 0.0.3
          * @since WPMS Global Content
          * @name add_network_global_inserts
          */
         function add_network_global_inserts()
         {
-            echo '<div id="wpmsngiheader"><center>' . $this->options['header'] . '</center></div>';
+            // echo '<div id="wpmsngiheader"><center>' . $this->options['header'] . '</center></div>';
             echo '<div id="wpmsngifooter"><p><center>' . $this->options['footer'] . '</center></p></div>';
         }
         
@@ -332,7 +338,7 @@ if (!class_exists(wpavp)) {
          * <p><b>This part is new and not in the old version</b></p>
          *
          * @author Ruben Storm
-         * @version 0.0.1
+         * @version 0.0.3
          * @since Version 0.0.1
          * @name add_network_global_inserts_posts
          * @param string $content
@@ -346,9 +352,14 @@ if (!class_exists(wpavp)) {
             $center_tmp = html_entity_decode($this->options['postcenter']);
             $bottom_tmp = html_entity_decode($this->options['postfooter']);
             
+            $pagetop_tmp = html_entity_decode($this->options['header']);
+            $pagebottom_tmp = html_entity_decode($this->options['pagesfooter']);
+            
             $top = '<center>'. $top_tmp .'</center>';
             $center = '<center>'. $center_tmp .'</center>';
             $bottom = '<center>'. $bottom_tmp .'</center>';
+            $pagetop = '<center>' . $pagetop_tmp . '</center>';
+            $pagebottom = '<center>' . $pagebottom_tmp . '</center>';
             
             if ((!is_feed()) && (!is_page())) {
                 $more = '<span id="more-'.get_the_ID().'"></span>';
@@ -378,6 +389,12 @@ if (!class_exists(wpavp)) {
                 }
                 $content = $top.$content.($bottom);
             }
+            
+            if ((!is_feed()) && (is_page())) {
+            	$content = $pagetop.$content.($pagebottom);
+            }
+            
+            
             return $content;
         }
 
@@ -441,7 +458,7 @@ if (!class_exists(wpavp)) {
          * @version 0.0.1
          * @since WPMS Global Content
          * @todo check on it, it does not have anything to do anymore
-         * @deprecated No use anymore, but let it in, maybe someone function still call it
+         * @deprecated No use anymore, but let it in, maybe some function still call it
          * @abstract
          */
         function on_admin_print_scripts()
@@ -497,10 +514,11 @@ if (!class_exists(wpavp)) {
                 'include' => '0',
                 'exclude' => '1',
                 'header' => 'This will be displayed in the page header.',
+            	'pagesfooter' => 'This will be displayed in the page footer.',
                 'postheader' => 'This will be displayed in the posts header.',
                 'postcenter' => 'This will be displayed in the posts center.',
                 'postfooter' => 'This will be displayed in the posts footer.',
-                'footer' => 'This will be displayed in the page footer.',
+                'footer' => 'This will be displayed in the blog footer.',
                 'submit' => 'Save Changes',
             );
             if (!get_option('wpmsngi')) {
