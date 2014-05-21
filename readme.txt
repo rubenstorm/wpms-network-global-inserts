@@ -6,7 +6,7 @@ Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network
 Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network, adds, global, adsense, script, javascript
 Requires at least: 3.3.
 Tested up to: 3.9
-Stable tag: 0.1.0
+Stable tag: 0.1.2
 Text Domain: wpmsngi
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html

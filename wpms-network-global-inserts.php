@@ -3,7 +3,7 @@
 Plugin Name: WPMS Network Global Inserts
 Plugin URI: http://ruben-storm.de/projekte/wpms-network-global-inserts/
 Description: WPMS Network Global Inserts allow wordpress multisite network admin to insert html in the content accross the network
-Version: 0.1.0
+Version: 0.1.2
 Author: Ruben Storm
 Author URI: http://ruben-storm.de
 License: GPLv3
