@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpms-network-global-inserts\n"
+"POT-Creation-Date: 2014-05-21 19:56+0100\n"
+"PO-Revision-Date: 2014-05-21 20:02+0100\n"
+"Last-Translator: Ruben Storm <storm.ruben@gmail.com>\n"
+"Language-Team: Ruben Storm <storm.ruben@gmail.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: C:\\Users\\Ruben\\Dropbox\\Projects\\NetBeansProjects"
+"\\wpms-network-global-inserts\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: wpms-network-global-inserts.php:569 wpmsngi-options.php:54
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: wpms-network-global-inserts.php:678 wpmsngi-options.php:399
+msgid "Save Changes"
+msgstr "Änderungen übernehmen"
+
+#: wpmsngi-options.php:74
+msgid "Network Settings"
+msgstr "Netzwerk Einstellungen"
+
+#: wpmsngi-options.php:77
+msgid "Exclude/Include"
+msgstr ""
+
+#: wpmsngi-options.php:84 wpmsngi-options.php:102
+msgid "Exclude Following"
+msgstr ""
+
+#: wpmsngi-options.php:89
+msgid "Include Following"
+msgstr "Folgendes hinzufügen"
+
+#: wpmsngi-options.php:101
+msgid "Comma separated list of blog ids you want to exclude/include."
+msgstr ""
+
+#: wpmsngi-options.php:102
+msgid "Select"
+msgstr ""
+
+#: wpmsngi-options.php:103
+msgid "and leave textbox empty if you want to show it on all blogs."
+msgstr ""
+
+#: wpmsngi-options.php:104
+msgid "(0 will insert it in all blogs)."
+msgstr "(0 wird es in jeden Blog einfügen)"
+
+#: wpmsngi-options.php:110
+msgid "Pages Content"
+msgstr "Seiten Inhalt"
+
+#: wpmsngi-options.php:114
+msgid "Pages Header Content"
+msgstr "Seiten Kopf Inhalt"
+
+#: wpmsngi-options.php:120
+msgid "Any text, html or javascript you want to show in the top of your pages"
+msgstr ""
+
+#: wpmsngi-options.php:124 wpmsngi-options.php:170 wpmsngi-options.php:220
+#: wpmsngi-options.php:266 wpmsngi-options.php:312 wpmsngi-options.php:361
+msgid "Alignment for the content"
+msgstr "Ausrichtung des Inhalts"
+
+#: wpmsngi-options.php:131 wpmsngi-options.php:177 wpmsngi-options.php:227
+#: wpmsngi-options.php:273 wpmsngi-options.php:319 wpmsngi-options.php:368
+msgid "No alignment"
+msgstr "Keine Ausrichtung"
+
+#: wpmsngi-options.php:136 wpmsngi-options.php:182 wpmsngi-options.php:232
+#: wpmsngi-options.php:278 wpmsngi-options.php:324 wpmsngi-options.php:373
+msgid "Left"
+msgstr "Links"
+
+#: wpmsngi-options.php:141 wpmsngi-options.php:187 wpmsngi-options.php:237
+#: wpmsngi-options.php:283 wpmsngi-options.php:329 wpmsngi-options.php:378
+msgid "Center"
+msgstr "Mitte"
+
+#: wpmsngi-options.php:146 wpmsngi-options.php:192 wpmsngi-options.php:242
+#: wpmsngi-options.php:288 wpmsngi-options.php:334 wpmsngi-options.php:383
+msgid "Right"
+msgstr "Rechts"
+
+#: wpmsngi-options.php:153
+msgid "This will be displayed in the top of all your pages"
+msgstr "Dies wird im Kopf aller Seiten angezeigt"
+
+#: wpmsngi-options.php:158
+msgid "Pages Footer Content"
+msgstr "Seiten Fuß Inhalt"
+
+#: wpmsngi-options.php:165
+msgid ""
+"Any text, html or javascript you want to show in the bottom of your pages"
+msgstr "Ein Text, HTML, Javascript den Sie im Fuß der Seite anzeigen möchten."
+
+#: wpmsngi-options.php:200
+msgid "Enter content that will be displayed in the pages footer."
+msgstr ""
+
+#: wpmsngi-options.php:205
+msgid "Posts Content"
+msgstr "Artikel Inhalt"
+
+#: wpmsngi-options.php:209
+msgid "Post Header Content"
+msgstr "Artikel Kopf Inhalt"
+
+#: wpmsngi-options.php:215
+msgid "Any text, html or javascript you want to show in the top of your posts"
+msgstr ""
+
+#: wpmsngi-options.php:250
+msgid "Enter content that will be displayed in header of the post."
+msgstr ""
+
+#: wpmsngi-options.php:255
+msgid "Post center Content"
+msgstr "Artikel Mitte Inhalt"
+
+#: wpmsngi-options.php:261
+msgid ""
+"Any text, html or javascript you want to show in the center of your posts"
+msgstr ""
+"Ein Text, HTML, Javascript den Sie in der Mitte der Artikel anzeigen möchten."
+
+#: wpmsngi-options.php:296
+msgid ""
+"Enter content that will be displayed in center of the post. Only if there is "
+"a more, it will show right behind it."
+msgstr ""
+
+#: wpmsngi-options.php:301
+msgid "Post footer Content"
+msgstr "Artikel Fuß Inhalt"
+
+#: wpmsngi-options.php:307
+msgid ""
+"Any text, html or javascript you want to show in the bottom of your posts"
+msgstr ""
+
+#: wpmsngi-options.php:342
+msgid "Enter content that will be displayed in footer of the post."
+msgstr ""
+
+#: wpmsngi-options.php:347
+msgid "Blog Footer Content"
+msgstr "Blog Fuß Inhalt"
+
+#: wpmsngi-options.php:350
+msgid "Footer Content"
+msgstr "Fuß Inhalt"
+
+#: wpmsngi-options.php:356
+msgid ""
+"Any text, html or javascript you want to show in the bottom of your bog."
+msgstr ""
+
+#: wpmsngi-options.php:391
+msgid ""
+"Enter content that will be displayed in the footer of all posts and pages."
+msgstr ""
+
+#: wpmsngi-options.php:393
+msgid ""
+"This will schow right on top of your body tag, you might do not want to "
+"insert HTML..."
+msgstr ""
+
+#: wpmsngi-options.php:415
+msgid "If you find this plugin useful, please donate to continue development."
+msgstr ""
+"Wenn Sie dieses Plugin geschickt finden, bitte ich Sie um eine kleine Spende "
+"für die Weiterentwicklung"

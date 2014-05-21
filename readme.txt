@@ -1,12 +1,13 @@
 === WPMS Network Global Inserts ===
 Contributors: rubenstorm
-Donate link: http://projects.ruben-storm.eu/wpms-network-global-inserts/
-Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network, adds
+Donate link: http://ruben-storm.de/blog/portfolio/wpms-network-global-inserts/
+Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network, adds, global, adsense, script, javascript
 =======
-Tags: multisite, ms, global insert, wpms, adsense, google, html
+Tags: multisite, ms, global insert, wpms, adsense, google, html, insert, network, adds, global, adsense, script, javascript
 Requires at least: 3.3.
-Tested up to: 3.6.1
-Stable tag: 0.0.3
+Tested up to: 3.9
+Stable tag: 0.1.0
+Text Domain: wpmsngi
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -83,6 +84,14 @@ Contact me, and i will take it in here
 
 == Changelog ==
 
+= 0.1.0 =
+* Textdomain for language
+* German Translation
+
+= 0.0.4 =
+* New Admin design
+* Alignment
+ 
 = 0.0.3 =
 * Issus Fixed 
 * Pages Fields added

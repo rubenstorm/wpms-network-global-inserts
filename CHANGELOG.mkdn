@@ -20,11 +20,21 @@ Maintainers:
 
 Translators:
 ------------
-* None yet
+* Ruben Storm (german)
 
 
 CHANGELOG
 ---------
+
+### 0.1.0
+* Textdomain for language
+* German Translation
+
+### 0.0.4
+* New Admin design
+* Alignment
+ 
+
 
 ### 0.0.3
 * Issus Fixed 

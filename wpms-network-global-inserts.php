@@ -3,10 +3,11 @@
 Plugin Name: WPMS Network Global Inserts
 Plugin URI: http://ruben-storm.de/projekte/wpms-network-global-inserts/
 Description: WPMS Network Global Inserts allow wordpress multisite network admin to insert html in the content accross the network
-Version: 0.0.3
+Version: 0.1.0
 Author: Ruben Storm
 Author URI: http://ruben-storm.de
 License: GPLv3
+Text Domain: wpmsngi
  */
 
 /**
@@ -132,6 +133,32 @@ define('WPMSNGI_URL', WP_PLUGIN_URL . '/wpms-network-global-inserts');
  */
 define('WPMSNGI_BASENAME', plugin_basename(__FILE__));
 
+/**
+ * Define the Textdomain
+ *
+ * This defines the textdomain for the translation global
+ * 
+ * @author Ruben Storm
+ * @version 0.1.0
+ * @since 0.1.0
+ */
+define('MY_PLUGIN_TEXTDOMAIN', 'wpmsngi');
+
+/**
+ * Define the folder 
+ *
+ * this defines the folder for the gettext files
+ * 
+ * @author Ruben Storm
+ * @version 0.1.0
+ * @since 0.1.0
+ */
+define('MY_PLUGIN_L10N_DIR', dirname(plugin_basename( __FILE__ )) . '/lang/');
+
+
+
+
+
 
 if (!class_exists('wpmsngi')) {
     
@@ -163,6 +190,9 @@ if (!class_exists('wpmsngi')) {
          */
         private $options;
         private $count = 0;
+        
+        
+        
         
         /**
          * The main Function in he class
@@ -202,9 +232,16 @@ if (!class_exists('wpmsngi')) {
             $this->options = get_option('wpmsngi');
             restore_current_blog();
             
+            load_plugin_textdomain(MY_PLUGIN_TEXTDOMAIN, FALSE, MY_PLUGIN_L10N_DIR);
+            
             if (is_admin()) {
                 register_activation_hook(WPMSNGI_BASENAME, array(&$this, 'on_activate'));
+                
                 add_action('admin_init', array(&$this, 'on_admin_init'));
+                
+                // add_action('admin_init', array(&$this, 'wpmsngi_update_options'));
+                
+                $this->wpmsngi_update_options();
 
                 if (1 == $blog_id) {
                     add_action('admin_menu', array(&$this, 'on_admin_menu'));
@@ -237,6 +274,9 @@ if (!class_exists('wpmsngi')) {
             }
         }
 
+        
+
+        
         /**
          * Register settings 
          * 
@@ -273,7 +313,10 @@ if (!class_exists('wpmsngi')) {
             $option_page = add_options_page(WPMSNGI_NAME . ' Options', WPMSNGI_NAME, 'Super Admin', WPMSNGI_BASENAME, array(&$this, 'options_page'));
             add_action("admin_print_scripts-$option_page", array(&$this, 'on_admin_print_scripts'));
             add_action("admin_print_styles-$option_page", array(&$this, 'on_admin_print_styles'));
+            // add_action('plugins_loaded', 'wpmsngi_init');
         }
+        
+        
 
         /**
          * Loading scripts in assets
@@ -324,7 +367,8 @@ if (!class_exists('wpmsngi')) {
         function add_network_global_inserts()
         {
             // echo '<div id="wpmsngiheader"><center>' . $this->options['header'] . '</center></div>';
-            echo '<div id="wpmsngifooter"><p><center>' . $this->options['footer'] . '</center></p></div>';
+            echo '<div id="wpmsngifooter">' . $this->reform_printout($this->options['footer'], $wpmsngiopts['alignFooter']) . '</div>';
+            
         }
         
         /**
@@ -346,27 +390,34 @@ if (!class_exists('wpmsngi')) {
          */
         function add_network_global_inserts_posts($content) {
             
-            $content.= '<!-- wpms-network-global-inserts -->';
+            $content.= '<!-- WPMSNGI:: '
+                    . 'This input got made by wpms-network-global-inserts '
+                    . 'It is a Wordpress Plugin, you will find your Plugins '
+                    . '@ www.wordpress.org ... '
+                    . 'Information about the Plugin you will find '
+                    . '@ www.ruben-storm.de '
+                    . 'Thank you for using this Plungin'
+                    . '-->';
                        
-            $top_tmp = html_entity_decode($this->options['postheader']);
-            $center_tmp = html_entity_decode($this->options['postcenter']);
-            $bottom_tmp = html_entity_decode($this->options['postfooter']);
             
-            $pagetop_tmp = html_entity_decode($this->options['header']);
-            $pagebottom_tmp = html_entity_decode($this->options['pagesfooter']);
+            // Pages data
+            $pagetop = $this->reform_printout($this->options['header'], $this->options['alignHeader']);
+            $pagebottom = $this->reform_printout($this->options['pagesfooter'], $this->options['alignPagesFooter']);
             
-            $top = '<center>'. $top_tmp .'</center>';
-            $center = '<center>'. $center_tmp .'</center>';
-            $bottom = '<center>'. $bottom_tmp .'</center>';
-            $pagetop = '<center>' . $pagetop_tmp . '</center>';
-            $pagebottom = '<center>' . $pagebottom_tmp . '</center>';
+            // Blog posts data
+            $top = $this->reform_printout($this->options['postheader'], $this->options['alignPostHeader']);
+            $center = $this->reform_printout($this->options['postcenter'], $this->options['alignPostCenter']);
+            $bottom = $this->reform_printout($this->options['postfooter'], $this->options['alignPostFooter']);
             
+                       
             if ((!is_feed()) && (!is_page())) {
+                // add top
                 $more = '<span id="more-'.get_the_ID().'"></span>';
                 if($morep=strpos($content,$more)!==false){
                     $content = str_replace($more, $more.$center, $content);
                     $top = '';
                 }
+                
                 
                 if (!is_single()) {
                     if (str_word_count($content) < 50) {
@@ -397,6 +448,42 @@ if (!class_exists('wpmsngi')) {
             
             return $content;
         }
+        
+        /**
+         * Make the Alignment for the Inserts
+         * 
+         * 
+         * @param type $arrpos
+         * @param type $alignment
+         * @return string
+         * @version 0.0.4
+         * @since 0.0.4
+         */
+        function reform_printout($htmlcode, $alignment = '0') {
+            
+            $data = html_entity_decode($htmlcode);
+            $cont = $data;
+            
+            if ($alignment == '1') {
+                $cont = '<p align="left">' . $data . '</p>';
+            }
+            
+            if ($alignment == '2') {
+                $cont = '<p align="center">' . $data . '</p>';
+            }
+            
+            if ($alignment == '3') {
+                $cont = '<p align="right">' . $data . '</p>';
+            }
+            return $cont;
+            
+        }
+        
+        
+        
+        
+        
+        
 
         /**
          * Building the setup page in admin dashboard
@@ -420,6 +507,7 @@ if (!class_exists('wpmsngi')) {
         function options_page()
         {
             // 'a_nice_textarea' is class of textarea which will have TinyMCE
+            
             wp_tiny_mce(true, array('editor_selector' => 'wpmsngitextarea', 'width' => '100%','height' => '300px'));
             include(WPMSNGI_PATH . '/wpmsngi-options.php');
         }
@@ -467,6 +555,8 @@ if (!class_exists('wpmsngi')) {
         }
         
         
+
+
         /**
          * 
          * Making the Links in the admin dashboard.
@@ -475,21 +565,102 @@ if (!class_exists('wpmsngi')) {
          * the settings</p>
          * 
          * <p>It is adding the link for the plugin in the WordPress Dashboard</p>
+         * 
+         * Addes Translation __( 'Blog Options', 'wpms-network-global-inserts' )
          *
          * @author Neerav Dobaria
          * @name action_links
-         * @version 0.0.1
+         * @version 0.0.4
          * @since WPMS Global Content
          * @param array $links the links allready exists
          * @return array $links the links including this one
          */
         function action_links($links)
         {
-            $settings_link = '<a href="options-general.php?page=' . WPMSNGI_BASENAME . '">Settings</a>';
+            $settings_link = '<a href="options-general.php?page=' . WPMSNGI_BASENAME . '">'. __( 'Settings', 'wpms-network-global-inserts' ) .'</a>';
             array_unshift($links, $settings_link);
             return $links;
         }
-
+        
+        
+        /**
+         * Makes a check if all is done right
+         * 
+         * @author Ruben Storm <storm.ruben@gmail.com>
+         * @version 0.0.4
+         * @since 0.0.4
+         */
+        function wpmsngi_update_options() {
+            // settings_fields('wpmsngi_options');
+            $wpmsngiopts = get_option('wpmsngi');
+            
+            $opts_include = $wpmsngiopts['include'];
+            $opts_exclude = $wpmsngiopts['exclude'];
+            $opts_header = $wpmsngiopts['header'];
+            $opts_pagesfooter = $wpmsngiopts['pagesfooter'];
+            $opts_postheader = $wpmsngiopts['postheader'];
+            $opts_postcenter = $wpmsngiopts['postcenter'];
+            $opts_postfooter = $wpmsngiopts['postfooter'];
+            $opts_footer = $wpmsngiopts['footer'];
+            $opts_submit = $wpmsngiopts['submit'];
+            
+            if (!$wpmsngiopts['alignHeader']) {
+                $opts_alignHeader = '0';
+            } else {
+                $opts_alignHeader = $wpmsngiopts['alignHeader'];
+            }
+            
+            if (!$wpmsngiopts['alignPagesFooter']) {
+                $opts_alignPagesFooter = '0';
+            } else {
+                $opts_alignPagesFooter = $wpmsngiopts['alignPagesFooter'];
+            }
+            
+            if (!$wpmsngiopts['alignPostHeader']) {
+                $opts_alignPostHeader = '0';
+            } else {
+                $opts_alignPostHeader = $wpmsngiopts['alignPostHeader'];
+            }
+            
+            if (!$wpmsngiopts['alignPostCenter']) {
+                $opts_alignPostCenter = '0';
+            } else {
+                $opts_alignPostCenter = $wpmsngiopts['alignPostCenter'];
+            }
+            
+            if (!$wpmsngiopts['alignPostFooter']) {
+                $opts_alignPostFooter = '0';
+            } else {
+                $opts_alignPostFooter = $wpmsngiopts['alignPostFooter'];
+            }
+            
+            if (!$wpmsngiopts['alignFooter']) {
+                $opts_alignFooter = '0';
+            } else {
+                $opts_alignFooter = $wpmsngiopts['alignFooter'];
+            }
+            // $opts_header
+            $temp = array(
+                'include' => $opts_include,
+                'exclude' => $opts_exclude,
+                'header' => $opts_header,
+                'alignHeader' => $opts_alignHeader,
+            	'pagesfooter' => $opts_pagesfooter,
+                'alignPagesFooter' => $opts_alignPagesFooter,
+                'postheader' => $opts_postheader,
+                'alignPostHeader' => $opts_alignPostHeader,
+                'postcenter' => $opts_postcenter,
+                'alignPostCenter' => $opts_alignPostCenter,
+                'postfooter' => $opts_postfooter,
+                'alignPostFooter' => $opts_alignPostFooter,
+                'footer' => $opts_footer,
+                'alignFooter' => $opts_alignFooter,
+                'submit' => $opts_submit,
+            );
+            // add_option('wpmsngi_temp', $temp);
+            update_option( 'wpmsngi', $temp );
+        }
+        
         /**
          * Setting the defaults 
          * 
@@ -503,8 +674,10 @@ if (!class_exists('wpmsngi')) {
          * go to Blog No. 1 and in the Dashboard settings you have the place to <br />
          * set it up. You also can install it over the plugin installer.</p>
          *
+         * Addes Translation __( 'Blog Options', 'wpms-network-global-inserts' )
+         * 
          * @author Neerav Dobaria
-         * @version 0.0.1
+         * @version 0.0.4
          * @since WPMS Global Content
          * @name on_activate
          */
@@ -513,16 +686,17 @@ if (!class_exists('wpmsngi')) {
             $default = array(
                 'include' => '0',
                 'exclude' => '1',
-                'header' => 'This will be displayed in the page header.',
-            	'pagesfooter' => 'This will be displayed in the page footer.',
-                'postheader' => 'This will be displayed in the posts header.',
-                'postcenter' => 'This will be displayed in the posts center.',
-                'postfooter' => 'This will be displayed in the posts footer.',
-                'footer' => 'This will be displayed in the blog footer.',
-                'submit' => 'Save Changes',
+                'header' => '',
+            	'pagesfooter' => '',
+                'postheader' => '',
+                'postcenter' => '',
+                'postfooter' => '',
+                'footer' => '',
+                'submit' => __('Save Changes', 'wpms-network-global-inserts' ),
             );
             if (!get_option('wpmsngi')) {
                 add_option('wpmsngi', $default);
+                
             }
         }
     }
